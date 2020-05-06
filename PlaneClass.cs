@@ -8,6 +8,16 @@ namespace FlyPrivate
 {
     class Plane : Aircraft
     {
-        //what is specific to a plane
+        
+        //Constructor
+        public Plane(int fuel, int milesPerGallon, int speed, Certifications cert, int seats, double rent)
+        {
+            maxFuel = fuel;
+            MPG = milesPerGallon;
+            speedMPH = speed;
+            certRequiredToFly = cert;
+            AvailableSeats = seats;
+            costToRentPerHour = rent;
+        }
     }
 }

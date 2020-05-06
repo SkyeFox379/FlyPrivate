@@ -50,6 +50,9 @@
             this.Minute2CB = new System.Windows.Forms.ComboBox();
             this.Colon2Label = new System.Windows.Forms.Label();
             this.Hour2CB = new System.Windows.Forms.ComboBox();
+            this.SubmitBtn = new System.Windows.Forms.Button();
+            this.NumPeopleLabel = new System.Windows.Forms.Label();
+            this.NumOfFlyersCB = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // DestinationLabel
@@ -114,7 +117,7 @@
             // 
             this.DateLabel.AutoSize = true;
             this.DateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLabel.Location = new System.Drawing.Point(263, 203);
+            this.DateLabel.Location = new System.Drawing.Point(259, 186);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(79, 32);
             this.DateLabel.TabIndex = 5;
@@ -124,7 +127,7 @@
             // 
             this.MonthLabel.AutoSize = true;
             this.MonthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonthLabel.Location = new System.Drawing.Point(91, 279);
+            this.MonthLabel.Location = new System.Drawing.Point(89, 241);
             this.MonthLabel.Name = "MonthLabel";
             this.MonthLabel.Size = new System.Drawing.Size(67, 25);
             this.MonthLabel.TabIndex = 6;
@@ -134,7 +137,7 @@
             // 
             this.DayLabel.AutoSize = true;
             this.DayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DayLabel.Location = new System.Drawing.Point(276, 279);
+            this.DayLabel.Location = new System.Drawing.Point(277, 241);
             this.DayLabel.Name = "DayLabel";
             this.DayLabel.Size = new System.Drawing.Size(47, 25);
             this.DayLabel.TabIndex = 7;
@@ -144,7 +147,7 @@
             // 
             this.YearLabel.AutoSize = true;
             this.YearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearLabel.Location = new System.Drawing.Point(450, 279);
+            this.YearLabel.Location = new System.Drawing.Point(457, 241);
             this.YearLabel.Name = "YearLabel";
             this.YearLabel.Size = new System.Drawing.Size(53, 25);
             this.YearLabel.TabIndex = 8;
@@ -167,7 +170,7 @@
             "Oct",
             "Nov",
             "Dec"});
-            this.SelectMonthCB.Location = new System.Drawing.Point(53, 331);
+            this.SelectMonthCB.Location = new System.Drawing.Point(53, 281);
             this.SelectMonthCB.Name = "SelectMonthCB";
             this.SelectMonthCB.Size = new System.Drawing.Size(152, 24);
             this.SelectMonthCB.TabIndex = 9;
@@ -209,7 +212,7 @@
             "29",
             "30",
             "31"});
-            this.SelectDayCB.Location = new System.Drawing.Point(241, 331);
+            this.SelectDayCB.Location = new System.Drawing.Point(245, 281);
             this.SelectDayCB.Name = "SelectDayCB";
             this.SelectDayCB.Size = new System.Drawing.Size(121, 24);
             this.SelectDayCB.TabIndex = 10;
@@ -230,16 +233,16 @@
             "2028",
             "2029",
             "2030"});
-            this.SelectYearCB.Location = new System.Drawing.Point(417, 331);
+            this.SelectYearCB.Location = new System.Drawing.Point(415, 281);
             this.SelectYearCB.Name = "SelectYearCB";
-            this.SelectYearCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectYearCB.Size = new System.Drawing.Size(148, 24);
             this.SelectYearCB.TabIndex = 11;
             // 
             // TimeRNGLabel
             // 
             this.TimeRNGLabel.AutoSize = true;
             this.TimeRNGLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeRNGLabel.Location = new System.Drawing.Point(164, 420);
+            this.TimeRNGLabel.Location = new System.Drawing.Point(152, 385);
             this.TimeRNGLabel.Name = "TimeRNGLabel";
             this.TimeRNGLabel.Size = new System.Drawing.Size(295, 32);
             this.TimeRNGLabel.TabIndex = 12;
@@ -261,7 +264,7 @@
             "10",
             "11",
             "12"});
-            this.HourCB.Location = new System.Drawing.Point(37, 519);
+            this.HourCB.Location = new System.Drawing.Point(27, 437);
             this.HourCB.Name = "HourCB";
             this.HourCB.Size = new System.Drawing.Size(77, 24);
             this.HourCB.TabIndex = 13;
@@ -270,7 +273,7 @@
             // 
             this.ColonLabel.AutoSize = true;
             this.ColonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColonLabel.Location = new System.Drawing.Point(121, 516);
+            this.ColonLabel.Location = new System.Drawing.Point(111, 434);
             this.ColonLabel.Name = "ColonLabel";
             this.ColonLabel.Size = new System.Drawing.Size(19, 29);
             this.ColonLabel.TabIndex = 14;
@@ -339,7 +342,7 @@
             "57",
             "58",
             "59"});
-            this.MinuteCB.Location = new System.Drawing.Point(144, 520);
+            this.MinuteCB.Location = new System.Drawing.Point(134, 438);
             this.MinuteCB.Name = "MinuteCB";
             this.MinuteCB.Size = new System.Drawing.Size(72, 24);
             this.MinuteCB.TabIndex = 15;
@@ -348,7 +351,7 @@
             // 
             this.DashLabel.AutoSize = true;
             this.DashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashLabel.Location = new System.Drawing.Point(302, 519);
+            this.DashLabel.Location = new System.Drawing.Point(292, 437);
             this.DashLabel.Name = "DashLabel";
             this.DashLabel.Size = new System.Drawing.Size(21, 29);
             this.DashLabel.TabIndex = 16;
@@ -361,7 +364,7 @@
             this.amORpmCB.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.amORpmCB.Location = new System.Drawing.Point(228, 520);
+            this.amORpmCB.Location = new System.Drawing.Point(218, 438);
             this.amORpmCB.Name = "amORpmCB";
             this.amORpmCB.Size = new System.Drawing.Size(68, 24);
             this.amORpmCB.TabIndex = 17;
@@ -373,7 +376,7 @@
             this.amORpm2CB.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.amORpm2CB.Location = new System.Drawing.Point(520, 521);
+            this.amORpm2CB.Location = new System.Drawing.Point(510, 439);
             this.amORpm2CB.Name = "amORpm2CB";
             this.amORpm2CB.Size = new System.Drawing.Size(68, 24);
             this.amORpm2CB.TabIndex = 22;
@@ -441,7 +444,7 @@
             "57",
             "58",
             "59"});
-            this.Minute2CB.Location = new System.Drawing.Point(436, 521);
+            this.Minute2CB.Location = new System.Drawing.Point(426, 439);
             this.Minute2CB.Name = "Minute2CB";
             this.Minute2CB.Size = new System.Drawing.Size(72, 24);
             this.Minute2CB.TabIndex = 20;
@@ -450,7 +453,7 @@
             // 
             this.Colon2Label.AutoSize = true;
             this.Colon2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Colon2Label.Location = new System.Drawing.Point(413, 517);
+            this.Colon2Label.Location = new System.Drawing.Point(403, 435);
             this.Colon2Label.Name = "Colon2Label";
             this.Colon2Label.Size = new System.Drawing.Size(19, 29);
             this.Colon2Label.TabIndex = 19;
@@ -472,16 +475,61 @@
             "10",
             "11",
             "12"});
-            this.Hour2CB.Location = new System.Drawing.Point(329, 520);
+            this.Hour2CB.Location = new System.Drawing.Point(319, 438);
             this.Hour2CB.Name = "Hour2CB";
             this.Hour2CB.Size = new System.Drawing.Size(77, 24);
             this.Hour2CB.TabIndex = 18;
+            // 
+            // SubmitBtn
+            // 
+            this.SubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubmitBtn.Location = new System.Drawing.Point(232, 688);
+            this.SubmitBtn.Name = "SubmitBtn";
+            this.SubmitBtn.Size = new System.Drawing.Size(143, 69);
+            this.SubmitBtn.TabIndex = 23;
+            this.SubmitBtn.Text = "Submit";
+            this.SubmitBtn.UseVisualStyleBackColor = true;
+            this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
+            // 
+            // NumPeopleLabel
+            // 
+            this.NumPeopleLabel.AutoSize = true;
+            this.NumPeopleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumPeopleLabel.Location = new System.Drawing.Point(55, 507);
+            this.NumPeopleLabel.Name = "NumPeopleLabel";
+            this.NumPeopleLabel.Size = new System.Drawing.Size(488, 32);
+            this.NumPeopleLabel.TabIndex = 24;
+            this.NumPeopleLabel.Text = "Number Of Flyers (Including Yourself)";
+            // 
+            // NumOfFlyersCB
+            // 
+            this.NumOfFlyersCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.NumOfFlyersCB.FormattingEnabled = true;
+            this.NumOfFlyersCB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.NumOfFlyersCB.Location = new System.Drawing.Point(245, 576);
+            this.NumOfFlyersCB.Name = "NumOfFlyersCB";
+            this.NumOfFlyersCB.Size = new System.Drawing.Size(121, 24);
+            this.NumOfFlyersCB.TabIndex = 25;
+            this.NumOfFlyersCB.SelectedIndexChanged += new System.EventHandler(this.NumOfFlyersCB_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 621);
+            this.ClientSize = new System.Drawing.Size(617, 783);
+            this.Controls.Add(this.NumOfFlyersCB);
+            this.Controls.Add(this.NumPeopleLabel);
+            this.Controls.Add(this.SubmitBtn);
             this.Controls.Add(this.amORpm2CB);
             this.Controls.Add(this.Minute2CB);
             this.Controls.Add(this.Colon2Label);
@@ -516,8 +564,6 @@
         private System.Windows.Forms.Label DestinationLabel;
         private System.Windows.Forms.Label FromLabel;
         private System.Windows.Forms.Label ToLabel;
-        private System.Windows.Forms.ComboBox StartLocCB;
-        private System.Windows.Forms.ComboBox DestinationCB;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Label MonthLabel;
         private System.Windows.Forms.Label DayLabel;
@@ -535,5 +581,10 @@
         private System.Windows.Forms.ComboBox Minute2CB;
         private System.Windows.Forms.Label Colon2Label;
         private System.Windows.Forms.ComboBox Hour2CB;
+        private System.Windows.Forms.Button SubmitBtn;
+        private System.Windows.Forms.Label NumPeopleLabel;
+        public System.Windows.Forms.ComboBox StartLocCB;
+        public System.Windows.Forms.ComboBox DestinationCB;
+        public System.Windows.Forms.ComboBox NumOfFlyersCB;
     }
 }
