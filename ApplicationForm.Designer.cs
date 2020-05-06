@@ -93,7 +93,7 @@
             "Sioux Falls, SD",
             "Aberdeen, SD",
             "Rapid City, SD",
-            "Maidson, SD"});
+            "Madison, SD"});
             this.StartLocCB.Location = new System.Drawing.Point(40, 125);
             this.StartLocCB.Name = "StartLocCB";
             this.StartLocCB.Size = new System.Drawing.Size(212, 24);
@@ -503,7 +503,7 @@
             // 
             // NumOfFlyersCB
             // 
-            this.NumOfFlyersCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.NumOfFlyersCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NumOfFlyersCB.FormattingEnabled = true;
             this.NumOfFlyersCB.Items.AddRange(new object[] {
             "1",
@@ -520,7 +520,6 @@
             this.NumOfFlyersCB.Name = "NumOfFlyersCB";
             this.NumOfFlyersCB.Size = new System.Drawing.Size(121, 24);
             this.NumOfFlyersCB.TabIndex = 25;
-            this.NumOfFlyersCB.SelectedIndexChanged += new System.EventHandler(this.NumOfFlyersCB_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -554,6 +553,7 @@
             this.Controls.Add(this.DestinationLabel);
             this.Name = "Form1";
             this.Text = "Application";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

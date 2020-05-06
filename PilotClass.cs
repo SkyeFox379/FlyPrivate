@@ -42,11 +42,12 @@ namespace FlyPrivate
 
 
         //Constructor
-        public Pilot(string Fname, string Lname, int age)
+        public Pilot(string Fname, string Lname, int age, Certifications certification)
         {
             this.Fname = Fname;
             this.Lname = Lname;
             this.age = age;
+            pilotCertifications.Add(certification);
         }
 
     }

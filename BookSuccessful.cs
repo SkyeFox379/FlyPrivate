@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace FlyPrivate
 {
-    public partial class NoFlightsForm : Form
+    public partial class BookSuccessful : Form
     {
-        public NoFlightsForm()
+        public BookSuccessful()
         {
             InitializeComponent();
         }
 
-        private void EditBtn_Click(object sender, EventArgs e)
+        private void BookSuccessful_Load(object sender, EventArgs e)
         {
-            Form1 appForm = new Form1();
-            this.Hide();
-            appForm.Show();
+            
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

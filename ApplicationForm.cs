@@ -13,9 +13,9 @@ namespace FlyPrivate
     public partial class Form1 : Form
     {
         Dictionary<string, City> Cities = new Dictionary<string, City>();
+        List<List<Pilot>> Pilots = new List<List<Pilot>>();
         List<List<Plane>> Planes = new List<List<Plane>>();
         List<List<Jet>> Jets = new List<List<Jet>>();
-
 
         public Form1()
         {
@@ -25,6 +25,27 @@ namespace FlyPrivate
             Cities.Add("Madison, SD", new City(7, 44, 97));
             Cities.Add("Rapid City, SD", new City(65, 44, 103));
 
+
+            //Pilots
+            List<Pilot> Jet_Pilots = new List<Pilot>();
+            Jet_Pilots.Add(new Pilot("Adam", "Dunn", 30, Certifications.jetCert));
+            Jet_Pilots.Add(new Pilot("Sam", "Pik", 37, Certifications.jetCert));
+            Jet_Pilots.Add(new Pilot("Tally", "Winheart", 26, Certifications.jetCert));
+            Jet_Pilots.Add(new Pilot("Caitlyn", "Piltover", 40, Certifications.jetCert));
+            Pilots.Add(Jet_Pilots);
+
+            List<Pilot> Private_Pilots = new List<Pilot>();
+            Private_Pilots.Add(new Pilot("Pam", "Layne", 31, Certifications.privateCert));
+            Private_Pilots.Add(new Pilot("Annie", "Tibbers", 25, Certifications.privateCert));
+            Private_Pilots.Add(new Pilot("Quinn", "Valor", 26, Certifications.privateCert));
+            Private_Pilots.Add(new Pilot("Yorick", "Void", 25, Certifications.privateCert));
+            Pilots.Add(Private_Pilots);
+
+            List<Pilot> DuelE_Pilots = new List<Pilot>();
+            DuelE_Pilots.Add(new Pilot("Tallon", "Arne", 30, Certifications.dualEngineCert));
+            DuelE_Pilots.Add(new Pilot("Ahri", "Fox", 31, Certifications.dualEngineCert));
+            DuelE_Pilots.Add(new Pilot("Zyra", "Plant", 34, Certifications.dualEngineCert));
+            Pilots.Add(DuelE_Pilots);
 
 
             //Planes (2 of each)
@@ -87,14 +108,9 @@ namespace FlyPrivate
         {
             bool match = true;
             double price;
+            Pilot Pilot_For_Trip;
 
             //find if there is a pilot available for time and date specified
-
-
-
-
-
-
 
 
 
@@ -120,7 +136,8 @@ namespace FlyPrivate
             //More than 5 seats means they need a jet
             else
             {
-                Jet_For_Trip = Jets[People_Traveling][0];
+                //People_Traveling - 5 is so that we can index back to zero since People_Traveling is greater than 5
+                Jet_For_Trip = Jets[People_Traveling - 5][0];
             }
 
             //brings up success form
@@ -133,9 +150,14 @@ namespace FlyPrivate
                 SuccessForm sForm = new SuccessForm();
 
                 //change placeholder info to match pricing and present a time
-                sForm.TimePlaceholderLabel.Text = "1:00PM Placeholder";
+                //for now we give them the earliest time they specify
+                string timeOfFlight = HourCB.Text + ":" + MinuteCB.Text + amORpmCB.Text;
+                string dateOfFlight = SelectMonthCB.Text + " " + SelectDayCB.Text + ", " + SelectYearCB.Text;
+                sForm.TimePlaceholderLabel.Text = timeOfFlight;
+                sForm.PlaceHolderDateLabel.Text = dateOfFlight;
                 sForm.PricePlaceholderLabel.Text = "$" + Math.Round((double)price, 2);
                 sForm.ShowDialog();
+
             }
 
 
@@ -149,9 +171,8 @@ namespace FlyPrivate
 
         }
 
-        private void NumOfFlyersCB_SelectedIndexChanged(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
