@@ -8,7 +8,7 @@ namespace FlyPrivate
 {
     class City
     {
-        public int costToFlyInto;
+        public double costToFlyInto;
         //each degree is 69 miles apart
         public int latitude;
         //each degree is 53 miles apart
@@ -20,8 +20,8 @@ namespace FlyPrivate
         public double DistanceBetween(City destination)
         {
             int miles = 0;
-            int lon = this.longitude - destination.longitude;
-            int lat = this.latitude - destination.latitude;
+            int lon = System.Math.Abs(this.longitude - destination.longitude);
+            int lat = System.Math.Abs(this.latitude - destination.latitude);
             miles = miles + lon * 53;
             miles = miles + lat * 69;
             return miles;

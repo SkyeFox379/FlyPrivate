@@ -31,9 +31,17 @@ namespace FlyPrivate
 
         public void removeCert(Certifications c)
         {
-
+            for (int i = 0; i < pilotCertifications.Count; i++)
+            {
+                if (pilotCertifications[i] == c)
+                {
+                    pilotCertifications.RemoveAt(i);
+                }
+            }
         }
 
+
+        //Constructor
         public Pilot(string Fname, string Lname, int age)
         {
             this.Fname = Fname;
