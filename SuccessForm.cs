@@ -16,5 +16,24 @@ namespace FlyPrivate
         {
             InitializeComponent();
         }
+
+        private void BookBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BookSuccessful bookSForm = new BookSuccessful();
+            bookSForm.Show();
+        }
+
+        private void ExtBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void GoBackToApplicationBtn_Click(object sender, EventArgs e)
+        {
+            Form1 appForm = new Form1();
+            this.Hide();
+            appForm.ShowDialog();
+        }
     }
 }

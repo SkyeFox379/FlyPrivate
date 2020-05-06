@@ -33,35 +33,39 @@
             this.ForPriceLabel = new System.Windows.Forms.Label();
             this.PricePlaceholderLabel = new System.Windows.Forms.Label();
             this.BookBtn = new System.Windows.Forms.Button();
+            this.PlaceHolderDateLabel = new System.Windows.Forms.Label();
+            this.ExtBtn = new System.Windows.Forms.Button();
+            this.GoBackToApplicationBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AvailableLabel
             // 
             this.AvailableLabel.AutoSize = true;
-            this.AvailableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AvailableLabel.Location = new System.Drawing.Point(138, 23);
+            this.AvailableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvailableLabel.Location = new System.Drawing.Point(213, 19);
             this.AvailableLabel.Name = "AvailableLabel";
-            this.AvailableLabel.Size = new System.Drawing.Size(509, 32);
+            this.AvailableLabel.Size = new System.Drawing.Size(276, 39);
             this.AvailableLabel.TabIndex = 0;
-            this.AvailableLabel.Text = "Flight available on the specified date at";
+            this.AvailableLabel.Text = "Flight Available!";
             // 
             // TimePlaceholderLabel
             // 
             this.TimePlaceholderLabel.AutoSize = true;
             this.TimePlaceholderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimePlaceholderLabel.Location = new System.Drawing.Point(261, 79);
+            this.TimePlaceholderLabel.Location = new System.Drawing.Point(214, 124);
             this.TimePlaceholderLabel.Name = "TimePlaceholderLabel";
             this.TimePlaceholderLabel.Size = new System.Drawing.Size(257, 32);
             this.TimePlaceholderLabel.TabIndex = 1;
             this.TimePlaceholderLabel.Text = "<placeholder time>";
+            this.TimePlaceholderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForPriceLabel
             // 
             this.ForPriceLabel.AutoSize = true;
-            this.ForPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForPriceLabel.Location = new System.Drawing.Point(288, 146);
+            this.ForPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForPriceLabel.Location = new System.Drawing.Point(211, 194);
             this.ForPriceLabel.Name = "ForPriceLabel";
-            this.ForPriceLabel.Size = new System.Drawing.Size(204, 32);
+            this.ForPriceLabel.Size = new System.Drawing.Size(260, 39);
             this.ForPriceLabel.TabIndex = 2;
             this.ForPriceLabel.Text = "For the price of";
             // 
@@ -69,27 +73,65 @@
             // 
             this.PricePlaceholderLabel.AutoSize = true;
             this.PricePlaceholderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PricePlaceholderLabel.Location = new System.Drawing.Point(284, 201);
+            this.PricePlaceholderLabel.Location = new System.Drawing.Point(235, 251);
             this.PricePlaceholderLabel.Name = "PricePlaceholderLabel";
             this.PricePlaceholderLabel.Size = new System.Drawing.Size(212, 32);
             this.PricePlaceholderLabel.TabIndex = 3;
             this.PricePlaceholderLabel.Text = "$<placeholder>";
+            this.PricePlaceholderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BookBtn
             // 
             this.BookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookBtn.Location = new System.Drawing.Point(316, 351);
+            this.BookBtn.Location = new System.Drawing.Point(241, 333);
             this.BookBtn.Name = "BookBtn";
             this.BookBtn.Size = new System.Drawing.Size(180, 93);
             this.BookBtn.TabIndex = 4;
             this.BookBtn.Text = "Book Now";
             this.BookBtn.UseVisualStyleBackColor = true;
+            this.BookBtn.Click += new System.EventHandler(this.BookBtn_Click);
+            // 
+            // PlaceHolderDateLabel
+            // 
+            this.PlaceHolderDateLabel.AutoSize = true;
+            this.PlaceHolderDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlaceHolderDateLabel.Location = new System.Drawing.Point(214, 75);
+            this.PlaceHolderDateLabel.Name = "PlaceHolderDateLabel";
+            this.PlaceHolderDateLabel.Size = new System.Drawing.Size(259, 32);
+            this.PlaceHolderDateLabel.TabIndex = 5;
+            this.PlaceHolderDateLabel.Text = "<placeholder date>";
+            this.PlaceHolderDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ExtBtn
+            // 
+            this.ExtBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExtBtn.Location = new System.Drawing.Point(472, 333);
+            this.ExtBtn.Name = "ExtBtn";
+            this.ExtBtn.Size = new System.Drawing.Size(154, 93);
+            this.ExtBtn.TabIndex = 6;
+            this.ExtBtn.Text = "Exit";
+            this.ExtBtn.UseVisualStyleBackColor = true;
+            this.ExtBtn.Click += new System.EventHandler(this.ExtBtn_Click);
+            // 
+            // GoBackToApplicationBtn
+            // 
+            this.GoBackToApplicationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoBackToApplicationBtn.Location = new System.Drawing.Point(30, 333);
+            this.GoBackToApplicationBtn.Name = "GoBackToApplicationBtn";
+            this.GoBackToApplicationBtn.Size = new System.Drawing.Size(154, 93);
+            this.GoBackToApplicationBtn.TabIndex = 7;
+            this.GoBackToApplicationBtn.Text = "Re-Enter Info";
+            this.GoBackToApplicationBtn.UseVisualStyleBackColor = true;
+            this.GoBackToApplicationBtn.Click += new System.EventHandler(this.GoBackToApplicationBtn_Click);
             // 
             // SuccessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(661, 450);
+            this.Controls.Add(this.GoBackToApplicationBtn);
+            this.Controls.Add(this.ExtBtn);
+            this.Controls.Add(this.PlaceHolderDateLabel);
             this.Controls.Add(this.BookBtn);
             this.Controls.Add(this.PricePlaceholderLabel);
             this.Controls.Add(this.ForPriceLabel);
@@ -109,5 +151,8 @@
         private System.Windows.Forms.Button BookBtn;
         public System.Windows.Forms.Label TimePlaceholderLabel;
         public System.Windows.Forms.Label PricePlaceholderLabel;
+        public System.Windows.Forms.Label PlaceHolderDateLabel;
+        private System.Windows.Forms.Button ExtBtn;
+        public System.Windows.Forms.Button GoBackToApplicationBtn;
     }
 }

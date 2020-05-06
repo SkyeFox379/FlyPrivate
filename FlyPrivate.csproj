@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AircraftClass.cs" />
+    <Compile Include="BookSuccessful.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookSuccessful.Designer.cs">
+      <DependentUpon>BookSuccessful.cs</DependentUpon>
+    </Compile>
     <Compile Include="CityClass.cs" />
     <Compile Include="CustomerClass.cs" />
     <Compile Include="NoFlightsForm.cs">
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookSuccessful.resx">
+      <DependentUpon>BookSuccessful.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoFlightsForm.resx">
       <DependentUpon>NoFlightsForm.cs</DependentUpon>

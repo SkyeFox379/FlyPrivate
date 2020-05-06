@@ -30,7 +30,6 @@
         {
             this.NoFlightsLabel = new System.Windows.Forms.Label();
             this.NoFlightsLabel2 = new System.Windows.Forms.Label();
-            this.ClearBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,25 +53,16 @@
             this.NoFlightsLabel2.TabIndex = 1;
             this.NoFlightsLabel2.Text = "date and time specified";
             // 
-            // ClearBtn
-            // 
-            this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearBtn.Location = new System.Drawing.Point(245, 345);
-            this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(125, 75);
-            this.ClearBtn.TabIndex = 2;
-            this.ClearBtn.Text = "Clear Info";
-            this.ClearBtn.UseVisualStyleBackColor = true;
-            // 
             // EditBtn
             // 
             this.EditBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBtn.Location = new System.Drawing.Point(429, 345);
+            this.EditBtn.Location = new System.Drawing.Point(315, 315);
             this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(125, 75);
+            this.EditBtn.Size = new System.Drawing.Size(159, 102);
             this.EditBtn.TabIndex = 3;
-            this.EditBtn.Text = "Edit Info";
+            this.EditBtn.Text = "Re-Enter Info";
             this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // NoFlightsForm
             // 
@@ -80,7 +70,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.EditBtn);
-            this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.NoFlightsLabel2);
             this.Controls.Add(this.NoFlightsLabel);
             this.Name = "NoFlightsForm";
@@ -94,7 +83,6 @@
 
         private System.Windows.Forms.Label NoFlightsLabel;
         private System.Windows.Forms.Label NoFlightsLabel2;
-        private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Button EditBtn;
     }
 }
