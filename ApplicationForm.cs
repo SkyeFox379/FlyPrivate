@@ -17,6 +17,12 @@ namespace FlyPrivate
         List<List<Plane>> Planes = new List<List<Plane>>();
         List<List<Jet>> Jets = new List<List<Jet>>();
 
+        public int RandomNum(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
         public Form1()
         {
             //Cities
@@ -45,6 +51,7 @@ namespace FlyPrivate
             DuelE_Pilots.Add(new Pilot("Tallon", "Arne", 30, Certifications.dualEngineCert));
             DuelE_Pilots.Add(new Pilot("Ahri", "Fox", 31, Certifications.dualEngineCert));
             DuelE_Pilots.Add(new Pilot("Zyra", "Plant", 34, Certifications.dualEngineCert));
+            DuelE_Pilots.Add(new Pilot("Xerath", "Azir", 107, Certifications.dualEngineCert));
             Pilots.Add(DuelE_Pilots);
 
 
@@ -108,13 +115,11 @@ namespace FlyPrivate
         {
             bool match = true;
             double price;
-            Pilot Pilot_For_Trip;
+            int selectPilot;
+            int selectCert;
+            string info = "placeholder";
 
-            //find if there is a pilot available for time and date specified
-
-
-
-
+            Pilot Pilot_For_Trip = Pilots[0][0];
 
             String Start_City_txt = StartLocCB.Text;
             City Start_City = Cities[Start_City_txt];
@@ -129,15 +134,38 @@ namespace FlyPrivate
             //Planes have 1-5 seats so assign a plane 
             if(People_Traveling <= 5)
             {
-                Plane_For_Trip = Planes[People_Traveling][0];
+                //we need to initialize a plane to be able to call aircraftInfo method from the place class
+                var p = new Plane(80, 20, 100, Certifications.privateCert, 2, 10);
+
+                //we select a random pilot until we impliment a schedule
+                selectPilot = RandomNum(1, 4);
+
+                //this selects either a pilot with a private or dualE certification
+                selectCert = RandomNum(1, 2);
+
+                Pilot_For_Trip = Pilots[selectCert][selectPilot];
+
+                Plane_For_Trip = Planes[People_Traveling - 1][0]; 
+                
                 //logic for determining if the plane is available goes here, if no planes with specified seats are available then increment people traveling
+
+                info = p.AircraftInfo();
             }
 
             //More than 5 seats means they need a jet
             else
             {
+                //we need to initialize a jet to be able to call aircraftInfo method from the jet class
+                var j = new Jet(80, 20, 100, Certifications.jetCert, 2, 10);
+
+                //we select a random pilot until we impliment a schedule 
+                selectPilot = RandomNum(1, 4);
+                Pilot_For_Trip = Pilots[0][selectPilot];
+
                 //People_Traveling - 5 is so that we can index back to zero since People_Traveling is greater than 5
                 Jet_For_Trip = Jets[People_Traveling - 5][0];
+
+                info = j.AircraftInfo();
             }
 
             //brings up success form
@@ -153,6 +181,8 @@ namespace FlyPrivate
                 //for now we give them the earliest time they specify
                 string timeOfFlight = HourCB.Text + ":" + MinuteCB.Text + amORpmCB.Text;
                 string dateOfFlight = SelectMonthCB.Text + " " + SelectDayCB.Text + ", " + SelectYearCB.Text;
+                sForm.aircraftInfoLabel.Text = info;
+                sForm.PlaceHolderPilot.Text = Pilot_For_Trip.Fname + " " + Pilot_For_Trip.Lname;
                 sForm.TimePlaceholderLabel.Text = timeOfFlight;
                 sForm.PlaceHolderDateLabel.Text = dateOfFlight;
                 sForm.PricePlaceholderLabel.Text = "$" + Math.Round((double)price, 2);

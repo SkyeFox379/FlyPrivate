@@ -8,9 +8,50 @@ namespace FlyPrivate
 {
     class Aircraft
     {
-        public int maxFuel;
-        public int MPG; //miles per gallon
-        public int speedMPH;
+        private int _maxFuel;
+        private int _MPG;
+        private int _speedMPH;
+
+
+        public int maxFuel
+        {
+            get
+            {
+                return _maxFuel;
+            }
+
+            set
+            {
+                this._maxFuel = value;
+            }
+        }
+
+        public int MPG
+        {
+            get
+            {
+                return _MPG;
+            }
+
+            set
+            {
+                this._MPG = value;
+            }
+        }
+
+        public int speedMPH
+        {
+            get
+            {
+                return _speedMPH;
+            }
+
+            set
+            {
+                this._speedMPH = value;
+            }
+        }
+
         public double costToRentPerHour;
         public double rent
         {
@@ -23,13 +64,19 @@ namespace FlyPrivate
                 this.costToRentPerHour = (double)(value) * (double)(1.07);
             }
         }
-        //put this in constructor instead of a setter so can only be set once
+        
         public Certifications certRequiredToFly { get; set; }
 
-
-        //seats may go under maintanance so we need to be able to change the number of available seats
         public int AvailableSeats { get; set; }
         
+        //polymorphism example
+        //tells the user what aircraft they will be flying on, appears on the success form
+        public virtual string AircraftInfo()
+        {
+            string info;
+            info = "You will be flying on a <placeholder>";
+            return info;
+        }
 
     }
 }

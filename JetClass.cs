@@ -18,5 +18,12 @@ namespace FlyPrivate
             AvailableSeats = seats;
             costToRentPerHour = rent;
         }
+
+        public override string AircraftInfo()
+        {
+            string info;
+            info = "You will be traveling on a jet";
+            return info;
+        }
     }
 }
