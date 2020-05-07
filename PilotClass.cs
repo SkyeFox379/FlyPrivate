@@ -8,9 +8,51 @@ namespace FlyPrivate
 {
     class Pilot
     {
-        public string Fname;
-        public string Lname;
-        public int age;
+        private string _fName;
+        private string _lName;
+        private int _age;
+
+
+        public string Fname
+        {
+            get
+            {
+                return _fName;
+            }
+
+            set
+            {
+                this._fName = value;
+            }
+        }
+
+        public string Lname
+        {
+            get
+            {
+                return _lName;
+            }
+
+            set
+            {
+                this._lName = value;
+            }
+        }
+
+        public int age
+        {
+            get
+            {
+                return _age;
+            }
+
+            set
+            {
+                this._age = value;
+            }
+        }
+
+
         public List<Certifications> pilotCertifications;
         bool cert = false;
 
@@ -42,12 +84,13 @@ namespace FlyPrivate
 
 
         //Constructor
-        public Pilot(string Fname, string Lname, int age, Certifications certification)
+        public Pilot(string Fname, string Lname, int age, Certifications c)
         {
+            pilotCertifications = new List<Certifications>();
             this.Fname = Fname;
             this.Lname = Lname;
             this.age = age;
-            pilotCertifications.Add(certification);
+            pilotCertifications.Add(c);
         }
 
     }

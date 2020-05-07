@@ -8,7 +8,22 @@ namespace FlyPrivate
 {
     class City
     {
-        public double costToFlyInto;
+        private double _cost;
+
+
+        public double costToFlyInto
+        {
+            get
+            {
+                return _cost;
+            }
+
+            set
+            {
+                this._cost = value;
+            }
+        }
+
         //each degree is 69 miles apart
         public int latitude;
         //each degree is 53 miles apart

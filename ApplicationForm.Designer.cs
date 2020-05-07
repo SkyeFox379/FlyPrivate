@@ -180,7 +180,6 @@
             this.SelectDayCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SelectDayCB.FormattingEnabled = true;
             this.SelectDayCB.Items.AddRange(new object[] {
-            "how do i made the month affect num of days here",
             "1",
             "2",
             "3",
