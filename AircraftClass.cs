@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace FlyPrivate
 {
-    class Aircraft
+    //we dont want there to be an instance of aircraft, there should only be instances of it's subclasses (plane and jet)
+    //therefor, this is an abstract class
+    abstract class Aircraft
     {
         private int _maxFuel;
         private int _MPG;
